@@ -78,7 +78,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### Install dependencies
+### requirements.txt 
 ```
 #Google Gemini (PaLM) Integration
 langchain-google-genai
@@ -96,6 +96,7 @@ python-dotenv
 numpy
 scikit-learn
 ```
+### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
