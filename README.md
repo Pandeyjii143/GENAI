@@ -79,7 +79,23 @@ source venv/bin/activate
 ```
 
 ### Install dependencies
+```
+#Google Gemini (PaLM) Integration
+langchain-google-genai
+google-generativeai
 
+#Hugging Face Integration
+langchain-huggingface
+transformers
+huggingface-hub
+
+#Environment Variable Management
+python-dotenv
+
+#MachineLearning Utilities
+numpy
+scikit-learn
+```
 ```bash
 pip install -r requirements.txt
 ```
