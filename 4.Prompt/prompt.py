@@ -13,38 +13,15 @@ style_input = st.selectbox( "Select Explanation Style", ["Beginner-Friendly", "T
 
 length_input = st.selectbox( "Select Explanation Length", ["Short (1-2 paragraphs)", "Medium (3-5 paragraphs)", "Long (detailed explanation)"] )
 
-template = PromptTemplate(
-    template="""
-Please summarize the research paper titled "{paper_input}" with the following specifications.
-
-Explanation style:
-{style_input}
-
-Explanation length:
-{length_input}
-
-1. Mathematical Details:
-- Include relevant mathematical equations if present.
-- Explain them in simple language.
-- Include code snippets where applicable.
-
-2. Analogies:
-- Use relatable analogies to explain complex ideas.
-
-If certain information is unavailable, respond with
-"Insufficient information available" instead of guessing.
-""",
-    input_variables=["paper_input","style_input","length_input"]
-)
-
+template = load_prompt(r"4.Prompt/template.json")
 #fill the placeholder
-prompt = template.invoke({
+if st.button('Summarize'):
+    chain=template|model
+    result=chain.invoke({
     "paper_input": paper_input,
     "style_input": style_input,
     "length_input": length_input
-})
-if st.button('Summarize'):
-    result = model.invoke(prompt)
+    })
     st.write(result.content)
 
 
