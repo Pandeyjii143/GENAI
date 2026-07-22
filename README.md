@@ -16,8 +16,15 @@ Langchain_model/
 │
 ├── 2.ChatModels/
 │   ├── 1_chatmodel_openai.py
-│   └── 2_chatmodel_googleGemini.py
-│
+│   └─ 2_chatmodel_googleGemini.py
+│___3.Embedding_model
+|   |__1_embedding.openai_query.py
+|   |__2_embedding.openai_docs.py
+|   |__3_embedding_hf_local.py
+|   |__4_documents_similarity.py
+|
+|___4.Prompt
+|   |__4.Prompt.py
 ├── .env.example
 ├── requirements.txt
 └── README.md
